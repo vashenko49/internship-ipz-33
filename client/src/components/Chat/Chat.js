@@ -50,6 +50,12 @@ const Chat = ({ location, configuration: { serverDomen } }) => {
     };
   }, [messages]);
 
+  useEffect(() => {
+    return () => {
+      loseSession();
+    };
+  }, []);
+
   function loseSession() {
     socket.close();
   }
