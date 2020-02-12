@@ -6,8 +6,8 @@ import Routes from './components/routing/Routes';
 
 import { configureStore } from './store';
 
-import './App.scss';
 import Header from './components/Header/Header';
+import './App.scss';
 
 const store = configureStore();
 
