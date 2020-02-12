@@ -8,9 +8,9 @@ const ConfigSchema = new Schema({
         type: String,
         require: true
     },
-    active: {
-        type: Boolean,
-        require: true,
+    active:{
+        type:Boolean,
+        require:true,
         default: false
     },
     development: {
@@ -30,6 +30,20 @@ const ConfigSchema = new Schema({
                 require: true
             }
         },
+        nodemailer: {
+            email: {
+                type: String,
+                require: true
+            },
+            password: {
+                type: String,
+                require: true
+            },
+            service: {
+                type: String,
+                require: true
+            }
+        },
         cloudinary: {
             cloudName: {
                 type: String,
@@ -48,11 +62,52 @@ const ConfigSchema = new Schema({
                 require: true
             }
         },
-        JWT_SECRET: {
-            type: String,
-            require: true
+        auth: {
+            JWT_SECRET: {
+                type: String,
+                require: true
+            },
+            JWT_EMAIL_SECRET: {
+                type: String,
+                require: true
+            },
+            JWT_FORGOT_PASSWORD: {
+                type: String,
+                require: true
+            },
+            oauth: {
+                google: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+                    }
+                },
+                facebook: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+                    }
+                },
+                github: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+                    }
+                }
+            }
         }
-
     },
     production: {
         domen: {
@@ -71,6 +126,23 @@ const ConfigSchema = new Schema({
                 require: true
             }
         },
+        nodemailer: {
+            email: {
+                type: String,
+                require: true
+
+            },
+            password: {
+                type: String,
+                require: true
+
+            },
+            service: {
+                type: String,
+                require: true
+
+            }
+        },
         cloudinary: {
             cloudName: {
                 type: String,
@@ -85,16 +157,69 @@ const ConfigSchema = new Schema({
             apiSecret: {
                 type: String,
                 require: true
+
             },
             path: {
                 type: String,
                 require: true
             }
         },
-        JWT_SECRET: {
-            type: String,
-            require: true
-        },
+        auth: {
+            JWT_SECRET: {
+                type: String,
+                require: true
+
+            },
+            JWT_EMAIL_SECRET: {
+                type: String,
+                require: true
+
+            },
+            JWT_FORGOT_PASSWORD: {
+                type: String,
+                require: true
+
+            },
+            oauth: {
+                google: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+
+                    }
+                },
+                facebook: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+
+                    }
+                },
+                github: {
+                    clientID: {
+                        type: String,
+                        require: true
+                    },
+                    clientSecret: {
+                        type: String,
+                        require: true
+
+                    }
+                }
+            }
+        }
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 

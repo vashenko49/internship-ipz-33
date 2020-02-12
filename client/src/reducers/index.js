@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import client from './client';
+import authorization from './authorization';
+import configuration from './configuration';
 
 export default combineReducers({
-  client
+  authorization,
+  configuration
 });

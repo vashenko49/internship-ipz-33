@@ -15,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Header />
         <Router>
+          <Header />
           <Switch>
             <Routes />
           </Switch>

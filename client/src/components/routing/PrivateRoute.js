@@ -6,12 +6,12 @@ import AccessDenied from '../AccessDenied/AccessDenied';
 class PrivateRoute extends Component {
   render() {
     const { component: Component, ...rest } = this.props;
-    const { isAdmin } = this.props.authorization;
+    const { isAuthorization } = this.props.authorization;
     return (
       <Route
         {...rest}
         render={props => {
-          return isAdmin === true ? <Component {...props} /> : <AccessDenied />;
+          return isAuthorization === true ? <Component {...props} /> : <AccessDenied />;
         }}
       />
     );
